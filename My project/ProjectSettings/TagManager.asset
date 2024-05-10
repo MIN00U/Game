@@ -7,6 +7,8 @@ TagManager:
   - grounded
   - ground
   - vote_paper
+  - enemy
+  - checkpoint
   layers:
   - Default
   - TransparentFX
