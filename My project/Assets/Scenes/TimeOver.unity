@@ -841,7 +841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34988af43f2126543914e595252331c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: SampleScene
+  SceneToLoad1: MapNew
+  SceneToLoad2: SampleScene
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

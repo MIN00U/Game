@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
-    public string SceneToLoad;
+    public string SceneToLoad1;
+    public string SceneToLoad2;
 
     // Update is called once per frame
 
@@ -13,7 +14,7 @@ public class Restart : MonoBehaviour
     {
         if (Input.GetKeyDown (KeyCode.R))
         {
-            SceneManager.LoadScene(SceneToLoad);
+            SceneManager.LoadScene(Random.Range(0,2)==0 ? SceneToLoad1 : SceneToLoad2);
         }
 
     }

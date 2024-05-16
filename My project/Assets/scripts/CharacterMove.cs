@@ -25,14 +25,14 @@ public class character_move : MonoBehaviour
     static int score = 0;
 
     public AudioSource audioSource;
-
+    private Animator animator;
     private Rigidbody2D rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        animator = GetComponent<Animator>();
         audioSource.mute = false;
 
 // 루핑: true일 경우 반복 재생
@@ -48,6 +48,11 @@ audioSource.loop = true;
 
         if(!timeOver) {
             rb.velocity = new Vector2(moveInputX * speed, rb.velocity.y);
+            if(moveInputX!=0) {
+                animator.SetTrigger("isRun");
+            } else {
+                animator.SetTrigger("isIdle");
+            }
             if (moveInputX > 0 && !facingRight)
             {
                 Flip();
@@ -123,6 +128,7 @@ audioSource.loop = true;
         if (other.gameObject.tag.Equals("checkpoint")){
             StaticData.valueToKeep = score;
             Debug.Log("넘어가기 전 score" + score.ToString());
+            score = 0;
             SceneManager.LoadScene(SceneToLoad);
         }
     }

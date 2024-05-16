@@ -16,7 +16,6 @@ public class Timer : MonoBehaviour
     {
         if (LimitTime <= 0 )
         {
-            Debug.Log("TimeOver");
             TimeOver();
             SceneManager.LoadScene(SceneToLoad);
         }

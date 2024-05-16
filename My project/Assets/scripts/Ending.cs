@@ -16,7 +16,7 @@ public class Ending : MonoBehaviour
         {
             gameEndingText.text = score.ToString() + " 표로 낙선...";
         }
-        else if(score <= 30)
+        else if(score < 30)
         {
             gameEndingText.text = score.ToString() + " 표로 국회의원 당선!";
         }
@@ -24,5 +24,6 @@ public class Ending : MonoBehaviour
         {
             gameEndingText.text = score.ToString() + " 표로 대통령 당선!!!";
         }
+        score = 0;
     }
 }
